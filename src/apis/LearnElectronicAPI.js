@@ -87,7 +87,7 @@ export class LearnElectronicAPI {
         const query = `${API_URL}/comment/${commentId}`;
 
         return axios
-            .delete(query)
+            .delete(query, { withCredentials: true })
             .then((response) => response.data)
             .catch((err) => {
                 console.log(err);

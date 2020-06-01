@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { LocalStorageAPI, TestAPI } from '../../../../../../apis';
+import { LocalStorageAPI, LearnElectronicAPI } from '../../../../../../apis';
 import moment from 'moment';
 
 export class EditableComment extends Component {
@@ -16,16 +16,7 @@ export class EditableComment extends Component {
     };
 
     handleDeleteComment = () => {
-        console.log('Удаление коммента');
-    };
-
-    renderText = () => {
-        return (
-            <p className="estimation">
-                <span onClick={this.startEditComment}>Редактировать</span>
-                <span onClick={this.handleDeleteComment}>Удалить</span>
-            </p>
-        );
+        LearnElectronicAPI.deleteComment(this.props.comment.id);
     };
 
     renderTextArea = () => {
@@ -57,19 +48,28 @@ export class EditableComment extends Component {
             dateTime,
         };
 
-        TestAPI.editComment(oldComment.id, comment).then((comments) => {
+        LearnElectronicAPI.editComment(oldComment.id, comment).then((comments) => {
             updateComments(comments);
         });
         this.setState({ isEdit: false });
     };
 
+    renderText = () => {
+        return (
+            <p className="estimation">
+                <span onClick={this.startEditComment}>Редактировать</span>
+                <span onClick={this.handleDeleteComment}>Удалить</span>
+            </p>
+        );
+    };
+
     render() {
-        const { avatar, authorName, dateTime, text } = this.props.comment;
+        const { userName, dateTime, text } = this.props.comment;
 
         return (
             <div className="container_comment">
                 <p className="info">
-                    <span className="info_user-name">{authorName}</span>
+                    <span className="info_user-name">{userName}</span>
                     <span className="info_time">{dateTime}</span>
                 </p>
                 {!this.state.isEdit && <p className="comment_text">{text}</p>}
