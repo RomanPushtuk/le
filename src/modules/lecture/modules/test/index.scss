@@ -1,0 +1,253 @@
+@import "../../../../style/variables";
+
+.lecture_test {
+  flex-basis: 100%;
+
+  .test_container {
+    margin-bottom: 40px;
+
+    .container_start-layout {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 15px;
+
+      .start-layout_info {
+        .info_title {
+          text-align: center;
+          font-size: 28px;
+          margin-bottom: 20px;
+        }
+        .info_description {
+          font-family: $font-family-base;
+          color: $dark;
+          line-height: 26px;
+        }
+      }
+      .start-layout_btn-start {
+        @include btn-dark;
+      }
+    }
+
+    .question {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 15px;
+
+      .question_title {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+      .test_question {
+        margin-bottom: 5px;
+      }
+      .question_btn-next {
+        @include btn-dark;
+      }
+    }
+
+    .answers {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 15px;
+
+      .answers_title {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+      .answers_container {
+        .title {
+          .span-info {
+
+          }
+
+          .correct {
+            color: $success
+          }
+
+          .wrong {
+            color: $danger;
+          }
+        }
+      }
+      .answers_btn-finish {
+        @include btn-dark;
+      }
+    }
+
+    .test_form-group {
+      display: flex;
+      flex-direction: column;
+
+      .form-group_label {
+        margin-bottom: 5px;
+        .label_checkbox {}
+        .label_text {}
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .correct {
+        background-color: $success;
+      }
+
+      .nocorrect {
+        background-color: $danger;
+      }
+    }
+  }
+}
+
+
+
+
+//.info-container_info {
+//  font-family: $font-family-base;
+//  max-width: 1024px;
+//  margin: 0 auto;
+//  padding: 20px 15px;
+//}
+//
+//.info_progress {
+//  float: right;
+//  font-size: 14px;
+//  color: $muted;
+//}
+//
+//.tasks_content-container {
+//  margin-bottom: 60px;
+//  padding: 0;
+//}
+//
+//.tasks_title {
+//  font-family: $font-family-base;
+//  max-width: 1024px;
+//  margin: 0 auto;
+//  text-align: center;
+//  font-size: 28px;
+//  margin-bottom: 20px;
+//  padding: 0 15px;
+//}
+//
+//.tasks_description {
+//  display: block;
+//  max-width: 1024px;
+//  margin: 0 auto;
+//  font-family: $font-family-base;
+//  color: $dark;
+//  line-height: 26px;
+//  margin-bottom: 40px;
+//}
+//
+//.tasks_btn-start {
+//  font-family: $font-family-base;
+//  font-size: 14px;
+//  font-weight: lighter;
+//  background: #54ad54;
+//  color: white;
+//  text-transform: none;
+//  box-shadow: none;
+//  border: none;
+//  display: block;
+//  margin: 0 auto;
+//  padding: 12px 24px;
+//  border-radius: 5px;
+//
+//  &:hover {
+//    cursor: pointer;
+//  }
+//}
+//
+//.info-container_test {
+//  div {
+//    max-width: 1024px;
+//    margin: 0 auto;
+//    padding: 0 15px;
+//  }
+//
+//  .test_title {
+//    font-family: $font-family-base;
+//    font-size: 24px;
+//    text-align: center;
+//    margin-bottom: 20px;
+//  }
+//
+//  .test_question {
+//    font-family: $font-family-base;
+//    font-size: 16px;
+//    margin-bottom: 40px;
+//
+//    question_info {
+//
+//    }
+//
+//    .success {
+//      color: #54ad54;
+//    }
+//
+//    .failed {
+//      color: #e43f52;
+//    }
+//  }
+//
+//  .test_variant {
+//    font-family: $font-family-base;
+//    font-size: 20px;
+//    margin-bottom: 20px;
+//  }
+//
+//  .test_form {
+//    .form_label {
+//      display: flex;
+//      align-items: center;
+//      margin-bottom: 12px;
+//      font-family: $font-family-base;
+//      color: $secondary;
+//
+//
+//      .label_checkbox{
+//        margin-right: 10px;
+//
+//        &:hover {
+//          cursor: pointer;
+//          color: $dark;
+//        }
+//
+//      }
+//
+//      .label_test {
+//
+//        &:hover {
+//          cursor: pointer;
+//          color: $dark;
+//        }
+//      }
+//    }
+//  }
+//
+//  .question {
+//    margin-bottom: 60px;
+//  }
+//
+//  .test_btn {
+//    font-family: $font-family-base;
+//    font-size: 14px;
+//    font-weight: lighter;
+//    background: #54ad54;
+//    color: white;
+//    text-transform: none;
+//    box-shadow: none;
+//    border: none;
+//    display: block;
+//    margin: 0 auto;
+//    padding: 12px 24px;
+//    border-radius: 5px;
+//
+//    &:hover {
+//      cursor: pointer;
+//    }
+//  }
+//}

@@ -1,0 +1,1 @@
+export { DefaultComment } from './DefaultComment';
