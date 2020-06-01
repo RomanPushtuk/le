@@ -33,8 +33,8 @@ export class EstimationComment extends Component {
 
         return (
             <p className="estimation">
-                <span onClick={this.likeComment}>Лайков - {dislikes}</span>
-                <span onClick={this.dislikeComment}>Дизлайков - {likes}</span>
+                <span onClick={this.likeComment}>Лайков - {likes}</span>
+                <span onClick={this.dislikeComment}>Дизлайков - {dislikes}</span>
             </p>
         );
     }
