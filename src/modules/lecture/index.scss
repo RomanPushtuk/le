@@ -1,0 +1,64 @@
+@import "../../style/variables";
+
+$selected-color: #f2f2f2;
+$disabled-color: #89939f;
+$transition: all 0.3s;
+
+.lecture {
+  display: flex;
+  height: calc(100vh - 0px);
+
+  .lecture_header {
+    background: $light;
+    margin-bottom: 40px;
+
+    .header_container {
+      display: flex;
+      height: 56px;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1024px;
+      padding: 0 15px;
+      margin: 0 auto;
+
+      .container_title {
+
+      }
+
+      .container_title {
+
+      }
+    }
+  }
+
+  .lecture_menu {
+    min-width: 70px;
+    border-right: 1px solid #dee2e6;
+
+    .menu_item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      transition: $transition;
+
+      .item_img {
+        width: 28px;
+        height: 28px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .selected {
+      background: $selected-color;
+    }
+
+    .disabled {
+      background: $muted;
+    }
+  }
+
+}

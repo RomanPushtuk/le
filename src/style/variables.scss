@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700&display=swap');
+
+$primary:                   #2f55d4;
+$secondary:                 #5a6d90;
+$success:                   #2eca8b;
+$warning:                   #f17425;
+$info:                      #17a2b8;
+$danger:                    #e43f52;
+$dark:                      #3c4858;
+$black:                     #161c2d;
+$muted:                     #8492a6;
+$light:                     #f8f9fc;
+
+$font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@mixin btn-dark {
+    font-size: 14px;
+    font-weight: lighter;
+    background: $secondary;
+    color: white;
+    text-transform: none;
+    box-shadow: none;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    padding: 12px 24px;
+    border-radius: 5px;
+
+    &:hover {
+      cursor: pointer;
+    }
+}

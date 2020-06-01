@@ -1,0 +1,26 @@
+@import "../../style/index";
+
+.login, .registration {
+  .login_form, .registration_form {
+    display: flex;
+    width: 320px;
+    margin: 40px auto;
+    flex-direction: column;
+
+    .form_title {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    .form_input-label {
+      color: $muted;
+      margin-bottom: 5px;
+    }
+    .form_input {
+      padding: 10px 15px;
+      margin-bottom: 10px;
+    }
+    .form_submit {
+      @include btn-dark;
+    }
+  }
+}

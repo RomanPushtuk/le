@@ -1,0 +1,146 @@
+@import "../../style/variables";
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.section_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 150px 15px;
+  background: $light;
+  margin-bottom: 40px;
+}
+
+.header_title {
+  font-family: $font-family-base;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.header_text {
+  font-family: $font-family-base;
+  font-size: 16px;
+  line-height: 26px;
+  color: $dark;
+  max-width: 600px
+}
+
+.section_themes {
+  display: flex;
+  flex-direction: column;
+}
+
+.themes_info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.info-container_title {
+  font-family: $font-family-base;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.info-container_time {
+  font-family: $font-family-base;
+  text-align: center;
+  font-size: 12px;
+  color: $muted;
+  margin-bottom: 30px;
+}
+
+.info-container_description {
+  font-family: $font-family-base;
+  color: $dark;
+  line-height: 24px;
+  font-size: 16px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+
+
+.themes_content {
+  padding: 0 15px;
+}
+
+.content_container {
+  display: flex;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.content_themes-list {
+  max-width: 250px;
+}
+
+.themes-list_title {
+  font-family: $font-family-base;
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid $muted;
+}
+
+.themes-list_item {
+  margin-bottom: 15px;
+
+  .item_title {
+    font-family: $font-family-base;
+    font-size: 16px;
+    color: $dark;
+
+    &:hover {
+      cursor: pointer;
+      color: $primary;
+    }
+
+  }
+
+  .title_number {
+    margin-right: 6px;
+  }
+
+  .selected {
+    color: $primary;
+  }
+}
+
+
+.themes_lectures {
+  ul {
+    list-style-type: disc;
+    margin-left: 50px;
+  }
+
+  .lectures_item {
+    margin-bottom: 15px;
+
+    .item_title {
+      font-family: $font-family-base;
+      color: $dark;
+
+      &:hover {
+        cursor: pointer;
+        color: $primary;
+      }
+    }
+
+    .item_progress {
+      font-family: $font-family-base;
+      font-size: 12px;
+      color: $muted;
+      margin-top: 5px;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@import "variables";
+
+
+h1, h2, h3, h4, h5, h6, p, span {
+  font-family: $font-family-base;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+a:link { text-decoration: none; }
+//a:visited { text-decoration: none; }
+//a:active { text-decoration: none; }
+//a:hover { text-decoration: none; }
+
+
+.header {
+  display: flex;
+  background: $black;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 15px;
+
+  .header_title {
+    margin: 0;
+    a {
+      color: $light;
+    }
+  }
+  .header_user {
+    color: $light;
+
+    a {
+      color: $light;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
