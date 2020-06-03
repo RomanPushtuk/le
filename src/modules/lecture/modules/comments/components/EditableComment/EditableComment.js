@@ -16,7 +16,25 @@ export class EditableComment extends Component {
     };
 
     handleDeleteComment = () => {
-        LearnElectronicAPI.deleteComment(this.props.comment.id);
+        const { updateComments, comment } = this.props;
+
+        LearnElectronicAPI.deleteComment(comment.id).then((comment) => {
+            updateComments(comment);
+        });
+    };
+
+    startEditComment = () => {
+        this.setState({ isEdit: true });
+    };
+
+    finishEditComment = () => {
+        const { updateComments, comment } = this.props;
+
+        LearnElectronicAPI.editComment({ commentId: comment.id, text: this.text }).then((comments) => {
+            updateComments(comments);
+        });
+
+        this.setState({ isEdit: false });
     };
 
     renderTextArea = () => {
@@ -32,26 +50,6 @@ export class EditableComment extends Component {
                 </p>
             </div>
         );
-    };
-
-    startEditComment = () => {
-        this.setState({ isEdit: true });
-    };
-
-    finishEditComment = () => {
-        const { updateComments, comment: oldComment } = this.props;
-
-        const dateTime = moment().format('YYYY.MM.DD HH:mm');
-        const comment = {
-            ...oldComment,
-            text: this.text,
-            dateTime,
-        };
-
-        LearnElectronicAPI.editComment(oldComment.id, comment).then((comments) => {
-            updateComments(comments);
-        });
-        this.setState({ isEdit: false });
     };
 
     renderText = () => {

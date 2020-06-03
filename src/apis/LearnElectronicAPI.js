@@ -95,6 +95,18 @@ export class LearnElectronicAPI {
             });
     }
 
+    static editComment(data) {
+        const query = `${API_URL}/comment`;
+
+        return axios
+            .put(query, data, { withCredentials: true })
+            .then((response) => response.data)
+            .catch((err) => {
+                console.log(err);
+                throw Error();
+            });
+    }
+
     static likeComment(data) {
         const query = `${API_URL}/like`;
 
@@ -123,7 +135,7 @@ export class LearnElectronicAPI {
         const query = `${API_URL}/test`;
 
         return axios
-            .put(query, data)
+            .post(query, data)
             .then((response) => response.data)
             .catch((err) => {
                 console.log(err);

@@ -95,6 +95,22 @@
         }
       }
 
+      .liked {
+        &:first-child {
+          color: $success;
+        }
+      }
+
+      .disliked {
+        &:last-child {
+          color: $danger;
+        }
+      }
+
+      .norate {
+
+      }
+
 
       .editable {
         display: flex;

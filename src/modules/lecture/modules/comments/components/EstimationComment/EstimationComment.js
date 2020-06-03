@@ -29,10 +29,11 @@ export class EstimationComment extends Component {
     };
 
     render() {
+        const { rate } = this.props;
         const { dislikes, likes } = this.state;
 
         return (
-            <p className="estimation">
+            <p className={`estimation ${rate}`}>
                 <span onClick={this.likeComment}>Лайков - {likes}</span>
                 <span onClick={this.dislikeComment}>Дизлайков - {dislikes}</span>
             </p>
