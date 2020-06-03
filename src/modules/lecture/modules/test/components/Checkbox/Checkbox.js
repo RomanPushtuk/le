@@ -3,25 +3,17 @@ import cn from 'classnames';
 
 export class Checkbox extends Component {
     handleChange = (event) => {
-        const { checked } = event.target;
-        const { value, index, onChange } = this.props;
-        const userOption = { value, correct: checked };
+        const { value, onChange } = this.props;
 
-        onChange({ index, userOption });
+        onChange(value);
     };
 
     render() {
-        const { value, style, correct } = this.props;
+        const { value } = this.props;
 
         return (
-            <label className={cn('form-group_label', style)}>
-                <input
-                    className="label_checkbox"
-                    type="checkbox"
-                    checked={correct}
-                    value={value}
-                    onChange={this.handleChange}
-                />
+            <label className="form-group_label">
+                <input className="label_checkbox" type="checkbox" value={value} onChange={this.handleChange} />
                 <span className="label_text">{value}</span>
             </label>
         );

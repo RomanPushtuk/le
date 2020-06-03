@@ -5,17 +5,17 @@ export class Question extends Component {
     constructor(props) {
         super(props);
 
-        this.userOptions = [];
+        this.userOptions = {};
     }
 
-    handleOnChange = ({ index, userOption }) => {
-        this.userOptions[index] = userOption;
+    handleOnChange = (value) => {
+        this.userOptions[value] = value;
     };
 
     handleShowNextQuestion = () => {
         const { onNext } = this.props;
 
-        onNext(this.userOptions);
+        onNext(Object.values(this.userOptions).join(','));
     };
 
     render() {
