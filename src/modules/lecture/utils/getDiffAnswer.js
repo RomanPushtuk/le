@@ -1,18 +1,9 @@
-export function getDiff(questions, answers) {
-    let attempt = {};
+export function getDiff(variants, answer, correctAnswer) {
+    const set2 = new Set([...correctAnswer]);
+    const intersection = new Set([...answer].filter((x) => set2.has(x)));
 
-    Object.keys(questions).forEach(key => {
-        if (questions[key] === true) {
-            attempt[key] = true;
-        }
-    });
+    return intersection.map();
 
-    let complete = 0;
-    Object.keys(attempt).forEach(key => {
-        if(questions[key] === answers[key] === true) {
-            complete++;
-        }
-    });
-
-    return [Object.keys(attempt).length, complete];
+    answer.sort();
+    correctAnswer.sort();
 }

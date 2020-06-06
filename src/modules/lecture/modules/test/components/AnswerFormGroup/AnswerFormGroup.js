@@ -7,13 +7,13 @@ const componentMap = {
     radiobutton: Radio,
 };
 
-export class FormGroup extends Component {
+export class AnswerFormGroup extends Component {
     renderFormGroup = () => {
-        const { component, variants, onChange } = this.props;
-        const Element = componentMap[component]
+        const { component, variants, answer, correctAnswer } = this.props;
+        const Element = componentMap[component];
 
         return variants.map((value, index) => {
-            return <Element key={value} value={value} index={index} onChange={onChange} />;
+            return <Element key={value} value={value} index={index} onChange={() => {}} />;
         });
     };
 

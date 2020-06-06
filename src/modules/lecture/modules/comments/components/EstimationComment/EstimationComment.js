@@ -7,6 +7,7 @@ export class EstimationComment extends Component {
         super(props);
 
         this.state = {
+            rate: props.rate,
             likes: props.likes,
             dislikes: props.dislikes,
         };
@@ -15,28 +16,27 @@ export class EstimationComment extends Component {
     likeComment = () => {
         const { commentId } = this.props;
 
-        LearnElectronicAPI.likeComment({ id: commentId }).then((likes) => {
-            this.setState({ likes });
+        LearnElectronicAPI.likeComment({ id: commentId }).then((data) => {
+            this.setState({ ...data });
         });
     };
 
     dislikeComment = () => {
         const { commentId } = this.props;
 
-        LearnElectronicAPI.dislikeComment({ id: commentId }).then((dislikes) => {
-            this.setState({ dislikes });
+        LearnElectronicAPI.dislikeComment({ id: commentId }).then((data) => {
+            this.setState({ ...data });
         });
     };
 
     render() {
-        const { rate } = this.props;
-        const { dislikes, likes } = this.state;
+        const { dislikes, likes, rate } = this.state;
 
         return (
-            <p className={`estimation ${rate}`}>
+            <div className={cn('estimation', rate)}>
                 <span onClick={this.likeComment}>Лайков - {likes}</span>
                 <span onClick={this.dislikeComment}>Дизлайков - {dislikes}</span>
-            </p>
+            </div>
         );
     }
 }

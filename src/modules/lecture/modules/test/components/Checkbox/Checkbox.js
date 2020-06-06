@@ -9,11 +9,17 @@ export class Checkbox extends Component {
     };
 
     render() {
-        const { value } = this.props;
+        const { value, checked } = this.props;
 
         return (
             <label className="form-group_label">
-                <input className="label_checkbox" type="checkbox" value={value} onChange={this.handleChange} />
+                <input
+                    className="label_checkbox"
+                    type="checkbox"
+                    checked={checked}
+                    value={value}
+                    onChange={this.handleChange}
+                />
                 <span className="label_text">{value}</span>
             </label>
         );

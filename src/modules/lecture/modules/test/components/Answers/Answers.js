@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
-import { FormGroup } from '../FormGroup';
 import cn from 'classnames';
-import { getDiffOptions, getCorrectOptions } from '../../utils';
+import { AnswerFormGroup } from '../AnswerFormGroup';
 
 export class Answers extends Component {
     renderAnswers = () => {
-        const { correctAnswers, answers } = this.props;
+        const { answers, correctAnswers, questions } = this.props;
 
-        // return answers.map((value, index) => {
-        //     const userOptions = answers[index];
-        //     const userCorrectOptions = getDiffOptions(testOptions, userOptions);
-        //     const questionTotalCorrectOptions = getCorrectOptions(testOptions);
-        //     const infoStyle = userCorrectOptions === questionTotalCorrectOptions ? 'correct' : 'wrong';
-        //     // const info = `правильно (${userCorrectOptions} из ${questionTotalCorrectOptions})`;
-        //
-        //     return (
-        //         <div className="answers_container" key={index}>
-        //             <h4 className="title">
-        //                 Вопрос: {title} <span className={cn('span-info', infoStyle)}>{null}</span>
-        //             </h4>
-        //             <FormGroup component={component} testOptions={testOptions} userOptions={userOptions} />
-        //         </div>
-        //     );
-        // });
+        return questions.map((question, index) => {
+            const { description, component, variants } = question;
+            const answer = answers[index];
+            const correctAnswer = correctAnswers[index];
+
+            return (
+                <div className="answers_container" key={index}>
+                    <h4 className="title">
+                        Вопрос: {description} <span className={cn('span-info')}>{null}</span>
+                    </h4>
+                    <AnswerFormGroup
+                        component={component}
+                        variants={variants}
+                        answer={answer}
+                        correctAnswer={correctAnswer}
+                    />
+                </div>
+            );
+        });
     };
 
     render() {
@@ -31,6 +33,7 @@ export class Answers extends Component {
         return (
             <div className="answers">
                 <h1 className="answers_title">Ответы</h1>
+                {this.renderAnswers()}
                 <button className="answers_btn-finish" onClick={onTestFinish}>
                     Завершить тест
                 </button>

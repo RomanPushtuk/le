@@ -96,21 +96,16 @@
       }
 
       .liked {
-        &:first-child {
-          color: $success;
-        }
+        color: $success;
       }
 
       .disliked {
-        &:last-child {
-          color: $danger;
-        }
+        color: $danger;
       }
 
       .norate {
 
       }
-
 
       .editable {
         display: flex;
