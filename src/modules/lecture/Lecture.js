@@ -35,7 +35,6 @@ export class Lecture extends Component {
 
     renderLecture = () => {
         const { selectedComponent, id, title, comments, content, test } = this.state;
-        console.log(this.state);
 
         return (
             <div className="lecture">

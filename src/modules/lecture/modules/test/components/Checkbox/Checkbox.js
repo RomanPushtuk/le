@@ -9,10 +9,10 @@ export class Checkbox extends Component {
     };
 
     render() {
-        const { value, checked } = this.props;
+        const { value, checked, result } = this.props;
 
         return (
-            <label className="form-group_label">
+            <label className={cn('form-group_label', result)}>
                 <input
                     className="label_checkbox"
                     type="checkbox"

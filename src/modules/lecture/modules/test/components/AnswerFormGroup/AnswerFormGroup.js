@@ -9,10 +9,15 @@ const componentMap = {
 
 export class AnswerFormGroup extends Component {
     renderFormGroup = () => {
-        const { component, variants, answer, correctAnswer } = this.props;
+        const { component, variants, correctAnswer } = this.props;
         const Element = componentMap[component];
 
+        const correctAnswerSet = new Set([...correctAnswer]);
+
         return variants.map((value, index) => {
+            if (correctAnswerSet.has(value)) {
+                return <Element key={value} checked value={value} index={index} onChange={() => {}} />;
+            }
             return <Element key={value} value={value} index={index} onChange={() => {}} />;
         });
     };

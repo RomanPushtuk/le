@@ -15,7 +15,7 @@ export class LearnElectronicAPI {
         const query = `${API_URL}/lecture/${lectureId}`;
 
         return axios
-            .get(query)
+            .get(query, { withCredentials: true })
             .then((response) => response.data)
             .catch((err) => {
                 console.log(err);

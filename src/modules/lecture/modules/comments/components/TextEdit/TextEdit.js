@@ -3,28 +3,31 @@ import { LocalStorageAPI, LearnElectronicAPI } from '../../../../../../apis';
 import moment from 'moment';
 
 export class TextEdit extends Component {
-    constructor(props) {
-        super(props);
-        this.text = '';
-    }
+    state = {
+        text: '',
+    };
 
     handleOnChange = (event) => {
-        this.text = event.target.value;
+        this.setState({ text: event.target.value });
     };
 
     sendComment = () => {
         const { lectureId, updateComments } = this.props;
 
-        LearnElectronicAPI.addComment({ lectureId, text: this.text }).then((newComment) => {
+        LearnElectronicAPI.addComment({ lectureId, text: this.state.text }).then((newComment) => {
             updateComments(newComment);
         });
+
+        this.setState({ text: '' });
     };
 
     render() {
+        const { text } = this.state;
+
         return (
             <div className="container_text-edit">
                 <div className="container_text-editor">
-                    <textarea onChange={this.handleOnChange} className="text-editor_textarea" />
+                    <textarea onChange={this.handleOnChange} value={text} className="text-editor_textarea" />
                 </div>
                 <button className="container_btn-send" onClick={this.sendComment}>
                     Оставить комментарий

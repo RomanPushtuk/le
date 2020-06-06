@@ -1,2 +1,2 @@
-export { questionGenerator } from "./questionGenerator";
-export { getDiff } from "./getDiffAnswer";
+export { questionGenerator } from './questionGenerator';
+export { getDiff } from './getDiffAnswer';

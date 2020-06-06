@@ -16,6 +16,7 @@ export class Question extends Component {
         const { onNext } = this.props;
 
         onNext(Object.values(this.userOptions).join(','));
+        this.userOptions = {};
     };
 
     render() {

@@ -16,8 +16,9 @@ export class Questions extends Component {
 
         if (done) throw Error;
 
+        this.answers = [];
+
         this.state = {
-            answers: [],
             question: value,
             correctAnswers: null,
             isQuestionsComplete: false,
@@ -27,19 +28,17 @@ export class Questions extends Component {
     handleNext = (answers) => {
         const { value, done } = this.questionGenerator.next();
 
+        this.answers.push(answers);
+
         if (done) {
             const { lectureId } = this.props;
 
-            return LearnElectronicAPI.completeTest({ lectureId, answers: this.state.answers }).then(
-                ({ correctAnswers }) => {
-                    this.setState({ correctAnswers, isQuestionsComplete: true });
-                }
-            );
+            return LearnElectronicAPI.completeTest({ lectureId, answers: this.answers }).then(({ correctAnswers }) => {
+                this.setState({ correctAnswers, isQuestionsComplete: true });
+            });
         }
 
-        return this.setState((prevState) => {
-            return { question: value, answers: [...prevState.answers, answers] };
-        });
+        this.setState({ question: value });
     };
 
     renderQuestion = () => {
@@ -50,11 +49,11 @@ export class Questions extends Component {
 
     renderAnswers = () => {
         const { onTestFinish, questions } = this.props;
-        const { correctAnswers, answers } = this.state;
+        const { correctAnswers } = this.state;
 
         return (
             <Answers
-                answers={answers}
+                answers={this.answers}
                 correctAnswers={correctAnswers}
                 questions={questions}
                 onTestFinish={onTestFinish}

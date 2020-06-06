@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  background: #161C2D;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 15px;
+
+  .header_title {
+    margin: 0;
+    a {
+      color: #F8F9FC;
+    }
+  }
+  .header_user {
+    color: #F8F9FC;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    a {
+      color: #F8F9FC;
+      margin-right: 10px;
+    }
+
+    &:after {
+      content: "";
+      margin-top: 5px;
+      margin-left: 5px;
+      border: 8px solid transparent;
+      border-top: 10px solid #F8F9FC;
+      display: block;
+      float: right;
+      transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+      z-index: -1;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
