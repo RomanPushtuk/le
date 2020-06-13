@@ -20,16 +20,18 @@
       margin-right: 10px;
     }
 
-    &:after {
-      content: "";
-      margin-top: 5px;
-      margin-left: 5px;
-      border: 8px solid transparent;
-      border-top: 10px solid #F8F9FC;
-      display: block;
-      float: right;
-      transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
-      z-index: -1;
+    .user-name {
+      &:after {
+        content: "";
+        margin-top: 5px;
+        margin-left: 5px;
+        border: 6px solid transparent;
+        border-top: 8px solid #F8F9FC;
+        display: block;
+        float: right;
+        transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+        z-index: -1;
+      }
     }
 
     &:hover {

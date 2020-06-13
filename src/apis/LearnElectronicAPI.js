@@ -135,7 +135,7 @@ export class LearnElectronicAPI {
         const query = `${API_URL}/test`;
 
         return axios
-            .post(query, data)
+            .post(query, data, { withCredentials: true })
             .then((response) => response.data)
             .catch((err) => {
                 console.log(err);

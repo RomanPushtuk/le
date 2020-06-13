@@ -96,11 +96,15 @@
       }
 
       .liked {
-        color: $success;
+        .likes {
+          color: $success;
+        }
       }
 
       .disliked {
-        color: $danger;
+        .dislikes {
+          color: $danger;
+        }
       }
 
       .norate {

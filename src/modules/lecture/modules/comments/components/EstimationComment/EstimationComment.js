@@ -34,8 +34,12 @@ export class EstimationComment extends Component {
 
         return (
             <div className={cn('estimation', rate)}>
-                <span onClick={this.likeComment}>Лайков - {likes}</span>
-                <span onClick={this.dislikeComment}>Дизлайков - {dislikes}</span>
+                <span className="likes" onClick={this.likeComment}>
+                    Лайков - {likes}
+                </span>
+                <span className="dislikes" onClick={this.dislikeComment}>
+                    Дизлайков - {dislikes}
+                </span>
             </div>
         );
     }

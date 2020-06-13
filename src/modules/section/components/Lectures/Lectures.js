@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import cn from 'classnames';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -12,7 +13,7 @@ export class Lectures extends Component {
                     <Link className="item_title" to={`/lecture/${id}`}>
                         {title}
                     </Link>
-                    <p className="item_progress">{isCompleted ? 'пройдено' : 'непройдено'}</p>
+                    <p className={cn('item_progress', isCompleted && 'completed')}>{isCompleted ? 'пройдено' : 'непройдено'}</p>
                 </li>
             );
         });

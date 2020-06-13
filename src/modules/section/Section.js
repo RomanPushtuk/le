@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { SectionHeader, Themes } from './components';
 import { LearnElectronicAPI } from '../../apis';
 
-export class Section extends Component {
+export class Section extends PureComponent {
     state = {
         isError: false,
         isLoading: true,

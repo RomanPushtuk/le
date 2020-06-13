@@ -10,6 +10,14 @@
 
   .menu_item {
     padding: 8px 15px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .exit {
+    color: #e43f52;
   }
 }
 

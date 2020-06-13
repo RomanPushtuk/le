@@ -1,9 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+
+import { store } from './store';
+import LearnElectronic from './LearnElectronic.container';
 
 import './style/reset.scss';
 import './style/index.scss';
 
-import { LearnElectronic } from './LearnElectronic';
-
-ReactDOM.render(<LearnElectronic />, document.getElementById('root'));
+ReactDOM.render(
+    <Provider store={store}>
+        <LearnElectronic />
+    </Provider>,
+    document.getElementById('root')
+);

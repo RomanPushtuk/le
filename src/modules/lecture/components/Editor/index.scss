@@ -1,0 +1,9 @@
+.editor {
+  display: flex;
+  height: auto;
+  width: 100%;
+
+  iframe {
+    flex-basis: 100%;
+  }
+}
