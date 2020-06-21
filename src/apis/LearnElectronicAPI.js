@@ -26,25 +26,13 @@ export class LearnElectronicAPI {
     static login(data) {
         const query = `${API_URL}/login`;
 
-        return axios
-            .post(query, data)
-            .then((response) => response.data)
-            .catch((err) => {
-                console.log(err);
-                throw Error();
-            });
+        return axios.post(query, data).then((response) => response.data);
     }
 
     static registration(data) {
         const query = `${API_URL}/registration`;
 
-        return axios
-            .post(query, data)
-            .then((response) => response.data)
-            .catch((err) => {
-                console.log(err);
-                throw Error();
-            });
+        return axios.post(query, data).then((response) => response.data);
     }
 
     static getAccount() {
