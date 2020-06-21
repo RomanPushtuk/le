@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { Comments } from './modules/comments';
 import { LearnElectronicAPI } from '../../apis';
 import { Menu, Editor } from './components';
@@ -40,7 +41,11 @@ export class Lecture extends Component {
             <div className="lecture">
                 <Menu onChangeComponent={this.handleChangeComponent} />
                 {selectedComponent === 'editor' && <Editor />}
-                {selectedComponent === 'text' && <p>{content}</p>}
+                {selectedComponent === 'text' && (
+                    <div>
+                        <ReactMarkdown source={content} />
+                    </div>
+                )}
                 {selectedComponent === 'tests' && <Test lectureId={id} lectureTitle={title} test={test} />}
                 {selectedComponent === 'comments' && (
                     <Comments

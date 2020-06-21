@@ -35,6 +35,7 @@
 
       .text-editor_textarea {
         flex-basis: 100%;
+        resize: vertical;
       }
     }
 
@@ -114,10 +115,11 @@
       .editable {
         display: flex;
         flex-direction: column;
+
         .text-area {
           margin-top: 5px;
           margin-bottom: 5px;
-          //width: 1000px;
+          resize: vertical;
         }
       }
     }

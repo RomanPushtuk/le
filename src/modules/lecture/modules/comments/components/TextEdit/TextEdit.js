@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { LocalStorageAPI, LearnElectronicAPI } from '../../../../../../apis';
-import moment from 'moment';
+import { LearnElectronicAPI } from '../../../../../../apis';
 
 export class TextEdit extends Component {
     state = {
