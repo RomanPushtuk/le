@@ -10,10 +10,10 @@ const componentMap = {
 export class FormGroup extends Component {
     renderFormGroup = () => {
         const { component, variants, onChange } = this.props;
-        const Element = componentMap[component]
+        const Element = componentMap[component];
 
         return variants.map((value, index) => {
-            return <Element key={value} value={value} index={index} onChange={onChange} />;
+            return <Element key={Math.random()} value={value} index={index} onChange={onChange} />;
         });
     };
 

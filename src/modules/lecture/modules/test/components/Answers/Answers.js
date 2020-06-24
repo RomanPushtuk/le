@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
-import { difference } from 'ramda';
+import { compare } from '../../../../utils';
 import { AnswerFormGroup } from '../AnswerFormGroup';
 
 export class Answers extends Component {
@@ -12,9 +12,10 @@ export class Answers extends Component {
             const answer = answers[index].split('&');
             const correctAnswer = correctAnswers[index].split('&');
 
-            const result = difference(answer, correctAnswer);
-            const style = result.length === 0 ? 'correct' : 'wrong';
-            const text = result.length === 0 ? 'Правильно!' : 'Ошибка!';
+            const result = compare(answer, correctAnswer);
+
+            const style = result ? 'correct' : 'wrong';
+            const text = result ? 'Правильно!' : 'Ошибка!';
 
             return (
                 <div className="answers_container" key={index}>

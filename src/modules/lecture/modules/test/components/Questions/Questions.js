@@ -33,6 +33,7 @@ export class Questions extends Component {
         if (done) {
             const { lectureId } = this.props;
 
+            console.log(this.answers)
             return LearnElectronicAPI.completeTest({ lectureId, answers: this.answers }).then(({ correctAnswers }) => {
                 this.setState({ correctAnswers, isQuestionsComplete: true });
             });
