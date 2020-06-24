@@ -13,7 +13,7 @@ export class Lectures extends Component {
                     <Link className="item_title" to={`/lecture/${id}`}>
                         {title}
                     </Link>
-                    <p className={cn('item_progress', isCompleted && 'completed')}>{isCompleted ? 'пройдено' : 'непройдено'}</p>
+                    <p className={cn('item_progress', isCompleted && 'completed')}>{isCompleted ? 'пройдено' : 'не пройдено'}</p>
                 </li>
             );
         });

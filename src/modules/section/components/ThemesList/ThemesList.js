@@ -14,7 +14,7 @@ export class ThemesList extends Component {
             return (
                 <li className="themes-list_item" key={index}>
                     <p className={cn('item_title', selected)} onClick={() => this.handleSelect(theme)}>
-                        <span className="title_number">{index + 1}</span>
+                        <span className="title_number">{index + 1}.</span>
                         {title}
                     </p>
                 </li>
