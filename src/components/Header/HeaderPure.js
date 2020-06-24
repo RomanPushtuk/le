@@ -26,7 +26,7 @@ export class HeaderPure extends PureComponent {
         return (
             <div className="header">
                 <h1 className="header_title">
-                    <Link to="/">LearnElectronic</Link>
+                    <Link to="/">LearnElectronics</Link>
                 </h1>
                 {!isRegistration && (
                     <p className="header_user">

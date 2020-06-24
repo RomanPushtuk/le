@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
 import { Comments } from './modules/comments';
 import { LearnElectronicAPI } from '../../apis';
-import { Menu, Editor } from './components';
+import { Menu, Editor, Text } from './components';
 import { Test } from './modules/test';
 
 /* lectureId: id-шник лекции который получаем из строки URL */
@@ -41,11 +40,7 @@ export class Lecture extends Component {
             <div className="lecture">
                 <Menu onChangeComponent={this.handleChangeComponent} />
                 {selectedComponent === 'editor' && <Editor />}
-                {selectedComponent === 'text' && (
-                    <div>
-                        <ReactMarkdown source={content} />
-                    </div>
-                )}
+                {selectedComponent === 'text' && <Text source={content} />}
                 {selectedComponent === 'tests' && <Test lectureId={id} lectureTitle={title} test={test} />}
                 {selectedComponent === 'comments' && (
                     <Comments

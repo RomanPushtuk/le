@@ -9,12 +9,12 @@ export class Answers extends Component {
 
         return questions.map((question, index) => {
             const { description, component, variants } = question;
-            const answer = answers[index].split(',');
-            const correctAnswer = correctAnswers[index].split(',');
+            const answer = answers[index].split('&');
+            const correctAnswer = correctAnswers[index].split('&');
 
             const result = difference(answer, correctAnswer);
             const style = result.length === 0 ? 'correct' : 'wrong';
-            const text = result.length === 0 ? 'правильно!' : 'ошибка!';
+            const text = result.length === 0 ? 'Правильно!' : 'Ошибка!';
 
             return (
                 <div className="answers_container" key={index}>

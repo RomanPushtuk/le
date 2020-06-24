@@ -33,14 +33,14 @@ export class EstimationComment extends Component {
         const { dislikes, likes, rate } = this.state;
 
         return (
-            <div className={cn('estimation', rate)}>
+            <p className={cn('estimation', rate)}>
                 <span className="likes" onClick={this.likeComment}>
                     Лайков - {likes}
                 </span>
                 <span className="dislikes" onClick={this.dislikeComment}>
                     Дизлайков - {dislikes}
                 </span>
-            </div>
+            </p>
         );
     }
 }

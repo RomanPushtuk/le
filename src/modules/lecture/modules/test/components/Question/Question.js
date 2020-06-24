@@ -15,7 +15,7 @@ export class Question extends Component {
     handleShowNextQuestion = () => {
         const { onNext } = this.props;
 
-        onNext(Object.values(this.userOptions).join(','));
+        onNext(Object.values(this.userOptions).join('&'));
         this.userOptions = {};
     };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const API_URL = 'https://learnelectronicsapi.azurewebsites.net';
+export const API_URL = 'http://localhost:4040';
 
 export const USER_ID = 'USER_ID';
 
